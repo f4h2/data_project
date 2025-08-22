@@ -1,0 +1,180 @@
+2025-08-22 10:19:28,378 - ERROR - [streaming_etl:28] - Không thể đọc file cấu hình etl_config.yaml: [Errno 2] No such file or directory: 'etl_config.yaml'
+2025-08-22 10:20:22,861 - INFO - [streaming_etl:69] - Khởi tạo Spark session thành công
+2025-08-22 10:20:23,392 - ERROR - [streaming_etl:93] - Lỗi khi đọc stream từ Kafka: Failed to find data source: kafka. Please deploy the application as per the deployment section of Structured Streaming + Kafka Integration Guide.
+2025-08-22 10:20:23,394 - ERROR - [streaming_etl:176] - Lỗi trong pipeline streaming: Failed to find data source: kafka. Please deploy the application as per the deployment section of Structured Streaming + Kafka Integration Guide.
+2025-08-22 10:20:23,796 - INFO - [clientserver:543] - Closing down clientserver connection
+2025-08-22 10:29:42,019 - INFO - [streaming_etl:69] - Khởi tạo Spark session thành công
+2025-08-22 10:29:43,247 - INFO - [streaming_etl:90] - Đọc stream từ Kafka thành công
+2025-08-22 10:29:43,259 - ERROR - [streaming_etl:125] - Lỗi trong quá trình biến đổi stream: name 'to_timestamp' is not defined
+2025-08-22 10:29:43,259 - ERROR - [streaming_etl:176] - Lỗi trong pipeline streaming: name 'to_timestamp' is not defined
+2025-08-22 10:29:43,444 - INFO - [clientserver:543] - Closing down clientserver connection
+2025-08-22 10:31:11,034 - INFO - [streaming_etl:69] - Khởi tạo Spark session thành công
+2025-08-22 10:31:12,270 - INFO - [streaming_etl:90] - Đọc stream từ Kafka thành công
+2025-08-22 10:31:12,413 - INFO - [streaming_etl:122] - Hoàn thành biến đổi stream, lấy top 5 sản phẩm
+2025-08-22 10:31:12,706 - INFO - [java_gateway:2273] - Callback Server Starting
+2025-08-22 10:31:12,706 - INFO - [java_gateway:2275] - Socket listening on ('127.0.0.1', 42511)
+2025-08-22 10:31:14,052 - INFO - [clientserver:561] - Python Server ready to receive messages
+2025-08-22 10:31:14,053 - INFO - [clientserver:575] - Received command c on object id p0
+2025-08-22 10:31:14,278 - ERROR - [streaming_etl:155] - Lỗi khi ghi batch 0 vào PostgreSQL: Can't get JDBC type for struct<start:timestamp,end:timestamp>.
+2025-08-22 10:31:29,133 - INFO - [clientserver:538] - Error while receiving.
+Traceback (most recent call last):
+  File "/home/loc/anaconda3/envs/py3_10/lib/python3.10/site-packages/py4j/clientserver.py", line 511, in send_command
+    answer = smart_decode(self.stream.readline()[:-1])
+RuntimeError: reentrant call inside <_io.BufferedReader name=4>
+2025-08-22 10:31:29,141 - INFO - [clientserver:543] - Closing down clientserver connection
+2025-08-22 10:31:29,142 - ERROR - [java_gateway:1055] - Exception while sending command.
+Traceback (most recent call last):
+  File "/home/loc/anaconda3/envs/py3_10/lib/python3.10/site-packages/py4j/clientserver.py", line 511, in send_command
+    answer = smart_decode(self.stream.readline()[:-1])
+RuntimeError: reentrant call inside <_io.BufferedReader name=4>
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/loc/anaconda3/envs/py3_10/lib/python3.10/site-packages/py4j/java_gateway.py", line 1038, in send_command
+    response = connection.send_command(command)
+  File "/home/loc/anaconda3/envs/py3_10/lib/python3.10/site-packages/py4j/clientserver.py", line 539, in send_command
+    raise Py4JNetworkError(
+py4j.protocol.Py4JNetworkError: Error while sending or receiving
+2025-08-22 10:31:29,142 - INFO - [clientserver:538] - Error while receiving.
+Traceback (most recent call last):
+  File "/home/loc/anaconda3/envs/py3_10/lib/python3.10/site-packages/py4j/clientserver.py", line 511, in send_command
+    answer = smart_decode(self.stream.readline()[:-1])
+  File "/home/loc/anaconda3/envs/py3_10/lib/python3.10/socket.py", line 717, in readinto
+    return self._sock.recv_into(b)
+  File "/home/loc/anaconda3/envs/py3_10/lib/python3.10/site-packages/pyspark/context.py", line 377, in signal_handler
+    self.cancelAllJobs()
+  File "/home/loc/anaconda3/envs/py3_10/lib/python3.10/site-packages/pyspark/context.py", line 2255, in cancelAllJobs
+    self._jsc.sc().cancelAllJobs()
+  File "/home/loc/anaconda3/envs/py3_10/lib/python3.10/site-packages/py4j/java_gateway.py", line 1322, in __call__
+    return_value = get_return_value(
+  File "/home/loc/anaconda3/envs/py3_10/lib/python3.10/site-packages/pyspark/errors/exceptions/captured.py", line 169, in deco
+    return f(*a, **kw)
+  File "/home/loc/anaconda3/envs/py3_10/lib/python3.10/site-packages/py4j/protocol.py", line 334, in get_return_value
+    raise Py4JError(
+py4j.protocol.Py4JError: An error occurred while calling o32.sc
+2025-08-22 10:31:29,144 - INFO - [clientserver:543] - Closing down clientserver connection
+2025-08-22 10:31:29,144 - ERROR - [java_gateway:1055] - Exception while sending command.
+Traceback (most recent call last):
+  File "/home/loc/anaconda3/envs/py3_10/lib/python3.10/site-packages/py4j/clientserver.py", line 511, in send_command
+    answer = smart_decode(self.stream.readline()[:-1])
+  File "/home/loc/anaconda3/envs/py3_10/lib/python3.10/socket.py", line 717, in readinto
+    return self._sock.recv_into(b)
+  File "/home/loc/anaconda3/envs/py3_10/lib/python3.10/site-packages/pyspark/context.py", line 377, in signal_handler
+    self.cancelAllJobs()
+  File "/home/loc/anaconda3/envs/py3_10/lib/python3.10/site-packages/pyspark/context.py", line 2255, in cancelAllJobs
+    self._jsc.sc().cancelAllJobs()
+  File "/home/loc/anaconda3/envs/py3_10/lib/python3.10/site-packages/py4j/java_gateway.py", line 1322, in __call__
+    return_value = get_return_value(
+  File "/home/loc/anaconda3/envs/py3_10/lib/python3.10/site-packages/pyspark/errors/exceptions/captured.py", line 169, in deco
+    return f(*a, **kw)
+  File "/home/loc/anaconda3/envs/py3_10/lib/python3.10/site-packages/py4j/protocol.py", line 334, in get_return_value
+    raise Py4JError(
+py4j.protocol.Py4JError: An error occurred while calling o32.sc
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/loc/anaconda3/envs/py3_10/lib/python3.10/site-packages/py4j/java_gateway.py", line 1038, in send_command
+    response = connection.send_command(command)
+  File "/home/loc/anaconda3/envs/py3_10/lib/python3.10/site-packages/py4j/clientserver.py", line 539, in send_command
+    raise Py4JNetworkError(
+py4j.protocol.Py4JNetworkError: Error while sending or receiving
+2025-08-22 10:31:29,144 - INFO - [clientserver:543] - Closing down clientserver connection
+2025-08-22 10:31:29,144 - ERROR - [streaming_etl:166] - Lỗi khi sink stream: An error occurred while calling o131.awaitTermination
+2025-08-22 10:31:29,144 - ERROR - [streaming_etl:176] - Lỗi trong pipeline streaming: An error occurred while calling o131.awaitTermination
+2025-08-22 10:31:29,473 - INFO - [clientserver:543] - Closing down clientserver connection
+2025-08-22 10:46:02,098 - INFO - [streaming_etl:69] - Khởi tạo Spark session thành công
+2025-08-22 10:46:03,408 - INFO - [streaming_etl:90] - Đọc stream từ Kafka thành công
+2025-08-22 10:46:03,591 - INFO - [streaming_etl:160] - Hoàn thành biến đổi stream, lấy top 5 sản phẩm
+2025-08-22 10:46:03,883 - INFO - [java_gateway:2273] - Callback Server Starting
+2025-08-22 10:46:03,883 - INFO - [java_gateway:2275] - Socket listening on ('127.0.0.1', 39033)
+2025-08-22 10:46:05,416 - INFO - [clientserver:561] - Python Server ready to receive messages
+2025-08-22 10:46:05,417 - INFO - [clientserver:575] - Received command c on object id p0
+2025-08-22 10:46:08,700 - INFO - [streaming_etl:192] - Batch 0: Ghi thành công vào PostgreSQL
+2025-08-22 10:46:44,491 - INFO - [clientserver:575] - Received command c on object id p0
+2025-08-22 10:46:47,505 - INFO - [streaming_etl:192] - Batch 1: Ghi thành công vào PostgreSQL
+2025-08-22 10:46:47,671 - INFO - [clientserver:575] - Received command c on object id p0
+2025-08-22 10:46:50,354 - INFO - [streaming_etl:192] - Batch 2: Ghi thành công vào PostgreSQL
+2025-08-22 10:46:50,458 - INFO - [clientserver:575] - Received command c on object id p0
+2025-08-22 10:46:52,411 - INFO - [streaming_etl:192] - Batch 3: Ghi thành công vào PostgreSQL
+2025-08-22 10:46:52,509 - INFO - [clientserver:575] - Received command c on object id p0
+2025-08-22 10:46:54,374 - INFO - [streaming_etl:192] - Batch 4: Ghi thành công vào PostgreSQL
+2025-08-22 10:46:54,470 - INFO - [clientserver:575] - Received command c on object id p0
+2025-08-22 10:46:56,666 - INFO - [streaming_etl:192] - Batch 5: Ghi thành công vào PostgreSQL
+2025-08-22 10:46:56,759 - INFO - [clientserver:575] - Received command c on object id p0
+2025-08-22 10:46:58,909 - INFO - [streaming_etl:192] - Batch 6: Ghi thành công vào PostgreSQL
+2025-08-22 10:46:59,009 - INFO - [clientserver:575] - Received command c on object id p0
+2025-08-22 10:47:00,871 - INFO - [streaming_etl:192] - Batch 7: Ghi thành công vào PostgreSQL
+2025-08-22 10:47:00,982 - INFO - [clientserver:575] - Received command c on object id p0
+2025-08-22 10:47:03,333 - INFO - [streaming_etl:192] - Batch 8: Ghi thành công vào PostgreSQL
+2025-08-22 10:47:03,424 - INFO - [clientserver:575] - Received command c on object id p0
+2025-08-22 10:47:05,650 - INFO - [streaming_etl:192] - Batch 9: Ghi thành công vào PostgreSQL
+2025-08-22 10:47:10,628 - INFO - [clientserver:538] - Error while receiving.
+Traceback (most recent call last):
+  File "/home/loc/anaconda3/envs/py3_10/lib/python3.10/site-packages/py4j/clientserver.py", line 511, in send_command
+    answer = smart_decode(self.stream.readline()[:-1])
+RuntimeError: reentrant call inside <_io.BufferedReader name=4>
+2025-08-22 10:47:10,628 - INFO - [clientserver:543] - Closing down clientserver connection
+2025-08-22 10:47:10,628 - ERROR - [java_gateway:1055] - Exception while sending command.
+Traceback (most recent call last):
+  File "/home/loc/anaconda3/envs/py3_10/lib/python3.10/site-packages/py4j/clientserver.py", line 511, in send_command
+    answer = smart_decode(self.stream.readline()[:-1])
+RuntimeError: reentrant call inside <_io.BufferedReader name=4>
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/loc/anaconda3/envs/py3_10/lib/python3.10/site-packages/py4j/java_gateway.py", line 1038, in send_command
+    response = connection.send_command(command)
+  File "/home/loc/anaconda3/envs/py3_10/lib/python3.10/site-packages/py4j/clientserver.py", line 539, in send_command
+    raise Py4JNetworkError(
+py4j.protocol.Py4JNetworkError: Error while sending or receiving
+2025-08-22 10:47:10,629 - INFO - [clientserver:538] - Error while receiving.
+Traceback (most recent call last):
+  File "/home/loc/anaconda3/envs/py3_10/lib/python3.10/site-packages/py4j/clientserver.py", line 511, in send_command
+    answer = smart_decode(self.stream.readline()[:-1])
+  File "/home/loc/anaconda3/envs/py3_10/lib/python3.10/socket.py", line 717, in readinto
+    return self._sock.recv_into(b)
+  File "/home/loc/anaconda3/envs/py3_10/lib/python3.10/site-packages/pyspark/context.py", line 377, in signal_handler
+    self.cancelAllJobs()
+  File "/home/loc/anaconda3/envs/py3_10/lib/python3.10/site-packages/pyspark/context.py", line 2255, in cancelAllJobs
+    self._jsc.sc().cancelAllJobs()
+  File "/home/loc/anaconda3/envs/py3_10/lib/python3.10/site-packages/py4j/java_gateway.py", line 1322, in __call__
+    return_value = get_return_value(
+  File "/home/loc/anaconda3/envs/py3_10/lib/python3.10/site-packages/pyspark/errors/exceptions/captured.py", line 169, in deco
+    return f(*a, **kw)
+  File "/home/loc/anaconda3/envs/py3_10/lib/python3.10/site-packages/py4j/protocol.py", line 334, in get_return_value
+    raise Py4JError(
+py4j.protocol.Py4JError: An error occurred while calling o32.sc
+2025-08-22 10:47:10,629 - INFO - [clientserver:543] - Closing down clientserver connection
+2025-08-22 10:47:10,629 - ERROR - [java_gateway:1055] - Exception while sending command.
+Traceback (most recent call last):
+  File "/home/loc/anaconda3/envs/py3_10/lib/python3.10/site-packages/py4j/clientserver.py", line 511, in send_command
+    answer = smart_decode(self.stream.readline()[:-1])
+  File "/home/loc/anaconda3/envs/py3_10/lib/python3.10/socket.py", line 717, in readinto
+    return self._sock.recv_into(b)
+  File "/home/loc/anaconda3/envs/py3_10/lib/python3.10/site-packages/pyspark/context.py", line 377, in signal_handler
+    self.cancelAllJobs()
+  File "/home/loc/anaconda3/envs/py3_10/lib/python3.10/site-packages/pyspark/context.py", line 2255, in cancelAllJobs
+    self._jsc.sc().cancelAllJobs()
+  File "/home/loc/anaconda3/envs/py3_10/lib/python3.10/site-packages/py4j/java_gateway.py", line 1322, in __call__
+    return_value = get_return_value(
+  File "/home/loc/anaconda3/envs/py3_10/lib/python3.10/site-packages/pyspark/errors/exceptions/captured.py", line 169, in deco
+    return f(*a, **kw)
+  File "/home/loc/anaconda3/envs/py3_10/lib/python3.10/site-packages/py4j/protocol.py", line 334, in get_return_value
+    raise Py4JError(
+py4j.protocol.Py4JError: An error occurred while calling o32.sc
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/loc/anaconda3/envs/py3_10/lib/python3.10/site-packages/py4j/java_gateway.py", line 1038, in send_command
+    response = connection.send_command(command)
+  File "/home/loc/anaconda3/envs/py3_10/lib/python3.10/site-packages/py4j/clientserver.py", line 539, in send_command
+    raise Py4JNetworkError(
+py4j.protocol.Py4JNetworkError: Error while sending or receiving
+2025-08-22 10:47:10,629 - INFO - [clientserver:543] - Closing down clientserver connection
+2025-08-22 10:47:10,629 - ERROR - [streaming_etl:205] - Lỗi khi sink stream: An error occurred while calling o137.awaitTermination
+2025-08-22 10:47:10,629 - ERROR - [streaming_etl:215] - Lỗi trong pipeline streaming: An error occurred while calling o137.awaitTermination
+2025-08-22 10:47:10,818 - INFO - [clientserver:543] - Closing down clientserver connection
