@@ -1,0 +1,12 @@
+# config.yaml
+kafka:
+  bootstrap_servers: "localhost:9092"
+  topic: "clickstream"
+  partitions: 3
+  replication_factor: 1
+
+minio:
+  endpoint: "localhost:9000"
+  access_key: "minioadmin"
+  secret_key: "minioadmin"
+  bucket: "raw-data"

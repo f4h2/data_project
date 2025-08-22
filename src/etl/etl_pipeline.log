@@ -1,0 +1,33 @@
+2025-08-22 09:37:15,751 - INFO - [batch_etl:70] - Khởi tạo Spark session thành công
+2025-08-22 09:37:19,314 - INFO - [batch_etl:81] - Đọc thành công 34 bản ghi từ MinIO
+2025-08-22 09:37:19,571 - INFO - [batch_etl:98] - Dữ liệu sau khi làm sạch: 34 bản ghi
+2025-08-22 09:37:20,021 - INFO - [batch_etl:134] - Đọc thành công 1000 sản phẩm từ CSV
+2025-08-22 09:37:20,036 - INFO - [batch_etl:113] - Hoàn thành enrich dữ liệu với thông tin sản phẩm
+2025-08-22 09:37:20,171 - ERROR - [batch_etl:124] - Lỗi trong quá trình transform: [UNRESOLVED_COLUMN.WITH_SUGGESTION] A column or function parameter with name `click_count` cannot be resolved. Did you mean one of the following? [`category`, `price`, `product_id`, `product_name`, `CAST(count(action) AS click_count AS BIGINT)`].;
+'Project [product_id#27, CAST(count(action) AS click_count AS BIGINT)#75L, CAST(count(user_id) AS unique_users AS BIGINT)#76L, product_name#98, category#99, price#111, (('click_count * price#111) * 0.1) AS potential_revenue#131]
++- Project [product_id#27, CAST(count(action) AS click_count AS BIGINT)#75L, CAST(count(user_id) AS unique_users AS BIGINT)#76L, product_name#98, category#99, price#111]
+   +- Join Inner, (product_id#27 = product_id#105)
+      :- Aggregate [product_id#27], [product_id#27, cast(count(action#32) as bigint) AS CAST(count(action) AS click_count AS BIGINT)#75L, cast(count(user_id#0) as bigint) AS CAST(count(user_id) AS unique_users AS BIGINT)#76L]
+      :  +- Project [user_id#0, product_id#27, action#32, timestamp#22, etl_timestamp#37, minio AS source#43]
+      :     +- Project [user_id#0, product_id#27, action#32, timestamp#22, current_timestamp() AS etl_timestamp#37]
+      :        +- Project [user_id#0, product_id#27, cast(action#2 as string) AS action#32, timestamp#22]
+      :           +- Project [user_id#0, cast(product_id#1 as int) AS product_id#27, action#2, timestamp#22]
+      :              +- Project [user_id#0, product_id#1, action#2, to_timestamp(timestamp#3, Some(yyyy-MM-dd'T'HH:mm:ss.SSSSSS), TimestampType, Some(Asia/Ho_Chi_Minh), false) AS timestamp#22]
+      :                 +- Filter atleastnnonnulls(4, user_id#0, product_id#1, action#2, timestamp#3)
+      :                    +- Relation [user_id#0,product_id#1,action#2,timestamp#3] json
+      +- Project [product_id#105, product_name#98, category#99, cast(price#100 as double) AS price#111]
+         +- Project [cast(product_id#97 as int) AS product_id#105, product_name#98, category#99, price#100]
+            +- Relation [product_id#97,product_name#98,category#99,price#100] csv
+
+2025-08-22 09:37:20,658 - INFO - [batch_etl:198] - Đã dừng Spark session
+2025-08-22 09:37:20,659 - ERROR - [batch_etl:206] - Pipeline thất bại
+2025-08-22 09:37:20,660 - INFO - [clientserver:543] - Closing down clientserver connection
+2025-08-22 09:42:16,778 - INFO - [batch_etl:70] - Khởi tạo Spark session thành công
+2025-08-22 09:42:19,919 - INFO - [batch_etl:81] - Đọc thành công 34 bản ghi từ MinIO
+2025-08-22 09:42:20,208 - INFO - [batch_etl:98] - Dữ liệu sau khi làm sạch: 34 bản ghi
+2025-08-22 09:42:20,643 - INFO - [batch_etl:135] - Đọc thành công 1000 sản phẩm từ CSV
+2025-08-22 09:42:20,677 - INFO - [batch_etl:114] - Hoàn thành enrich dữ liệu với thông tin sản phẩm
+2025-08-22 09:42:21,399 - INFO - [batch_etl:155] - Dữ liệu đã được ghi vào PostgreSQL
+2025-08-22 09:42:21,498 - INFO - [batch_etl:174] - Xác minh: Đã load 34 bản ghi từ PostgreSQL
+2025-08-22 09:42:21,711 - INFO - [batch_etl:199] - Đã dừng Spark session
+2025-08-22 09:42:21,711 - INFO - [clientserver:543] - Closing down clientserver connection
